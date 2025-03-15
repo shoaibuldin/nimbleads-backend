@@ -33,9 +33,9 @@ class CatAndProdDatabaseConfig {
         vendor.setGenerateDdl(true)
         em.jpaVendorAdapter = vendor
         val props = Properties()
-        props["hibernate.dialect"] = env!!.getProperty("spring.jpa.properties.hibernate.dialect")
-        props["hibernate.hbm2ddl.auto"] = env.getProperty("spring.jpa.hibernate.ddl-auto")
-        props["show-sql"] = env.getProperty("spring.jpa.show-sql")
+
+        props["hibernate.hbm2ddl.auto"] = env?.getProperty("spring.jpa.hibernate.ddl-auto")
+        props["show-sql"] = env?.getProperty("spring.jpa.show-sql")
         em.setJpaProperties(props)
 
 

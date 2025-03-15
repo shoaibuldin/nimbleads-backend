@@ -35,10 +35,9 @@ class CampaignDatabaseConfig {
         vendor.setGenerateDdl(true)
         em.jpaVendorAdapter = vendor
         val props = Properties()
-        props["hibernate.dialect"] = env!!.getProperty("spring.jpa.properties.hibernate.dialect")
-        props["hibernate.hbm2ddl.auto"] = env.getProperty("spring.jpa.hibernate.ddl-auto")
-        props["hibernate.show_sql"] = env.getProperty("spring.jpa.show-sql")
-        //props.put("hibernate.show_sql",true);
+
+        props["hibernate.hbm2ddl.auto"] = env?.getProperty("spring.jpa.hibernate.ddl-auto")
+        props["hibernate.show_sql"] = env?.getProperty("spring.jpa.show-sql")
         em.setJpaProperties(props)
 
 

@@ -32,16 +32,9 @@ class ConfigDatabaseConfig {
         vendor.setGenerateDdl(true)
         em.jpaVendorAdapter = vendor
         val props = Properties()
-        props["hibernate.dialect"] = env!!.getProperty("spring.jpa.properties.hibernate.dialect")
-        props["hibernate.hbm2ddl.auto"] = env.getProperty("spring.jpa.hibernate.ddl-auto")
-        props["hibernate.cache.use_second_level_cache"] =
-            env.getProperty("spring.jpa.properties.hibernate.cache.use_second_level_cache")
-        props["hibernate.cache.region.factory_class"] =
-            env.getProperty("spring.jpa.properties.hibernate.cache.region.factory_class")
-        props["javax.persistence.sharedCache.mode"] =
-            env.getProperty("spring.jpa.properties.javax.persistence.sharedCache.mode")
-        props["hibernate.show_sql"] = env.getProperty("spring.jpa.show-sql")
-        //props.put("hibernate.show_sql",true);
+
+        props["hibernate.hbm2ddl.auto"] = env?.getProperty("spring.jpa.hibernate.ddl-auto")
+        props["hibernate.show_sql"] = env?.getProperty("spring.jpa.show-sql")
         em.setJpaProperties(props)
 
 
