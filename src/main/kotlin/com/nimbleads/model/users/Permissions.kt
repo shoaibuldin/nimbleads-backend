@@ -7,11 +7,11 @@ import jakarta.persistence.*
 class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id: Long? = null
+    val id: Long? = null
 
-    private val name: String? = null
-    private val description: String? = null
+    val name: String? = null
+    val description: String? = null
 
     @ManyToMany(mappedBy = "privileges")
-    private val roles: Collection<Role>? = null
+    val roles: Collection<Role>? = null
 }

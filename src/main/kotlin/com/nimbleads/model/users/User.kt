@@ -16,25 +16,25 @@ import jakarta.validation.constraints.Size
 class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long? = null
+    val id: Long? = null
 
     @Column(name = "first_name")
-    private var firstName: String? = null
+    var firstName: String? = null
 
     @Column(name = "middle_name")
-    private var middleName: String? = null
+    var middleName: String? = null
 
     @Column(name = "last_name")
-    private var lastName: String? = null
+    var lastName: String? = null
 
-    private var email: String? = null
-    private val enabled = false
+    var email: String? = null
+    val enabled = false
 
     @Size(max = 100)
-    private var password: String? = null
+    var password: String? = null
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private val customPermissions: List<CustomPermissions>? = null
+    val customPermissions: List<CustomPermissions>? = null
 
 
     @ManyToMany
@@ -44,7 +44,7 @@ class User {
         joinColumns = [JoinColumn(name = "user_id")],
         inverseJoinColumns = [JoinColumn(name = "role_id")]
     )
-    private val roles: List<Role> = ArrayList()
+    val roles: List<Role> = ArrayList()
 
     constructor()
 

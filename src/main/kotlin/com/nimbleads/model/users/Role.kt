@@ -9,14 +9,14 @@ import org.hibernate.annotations.NaturalId
 class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long? = null
+    val id: Long? = null
 
     //@Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)
-    private var name: String? = null
+    var name: String? = null
 
-    private val description: String? = null
+    val description: String? = null
 
 
     @ManyToMany
@@ -26,7 +26,7 @@ class Role {
         joinColumns = [JoinColumn(name = "role_id", referencedColumnName = "id")],
         inverseJoinColumns = [JoinColumn(name = "permission_id", referencedColumnName = "id")]
     )
-    private val privileges: Collection<Permissions>? = null
+    val privileges: Collection<Permissions>? = null
 
 
     constructor()

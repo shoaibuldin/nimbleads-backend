@@ -7,16 +7,16 @@ import jakarta.persistence.*
 class CustomPermissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id: Long? = null
+    val id: Long? = null
 
     @ManyToOne
     @JoinColumn(name = "permissionId")
-    private val permissions: Permissions? = null
+    val permissions: Permissions? = null
 
     @ManyToOne
     @JoinColumn(name = "userId")
-    private val user: User? = null
+    val user: User? = null
 
     // 1 for Add, -1 for Remove
-    private val status: Int? = null
+    val status: Int? = null
 }
