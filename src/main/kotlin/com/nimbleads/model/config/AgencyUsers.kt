@@ -9,9 +9,9 @@ import jakarta.persistence.*
 class AgencyUsers {
     @Id
     @Column(name = "agency_id")
-    private var agencyId: Long? = null
+    var agencyId: Long? = null
 
     @Id
     @Column(name = "user_id")
-    private var userId: Long? = null
+    var userId: Long? = null
 }
